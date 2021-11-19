@@ -16,7 +16,7 @@ const byte led4 = 9;
 const byte led5 = 10;         
 const byte led6 = 11;        
 const byte led7 = 12;         
-int temps=60;                // definir variable de temps en ms   
+int temps=30;                // definir variable de temps en ms   
 
 //********** Setup ****************************************************************
 void setup()
