@@ -15,7 +15,7 @@ const int led3 = 8;
 const int led4 = 9;          
 const int led5 = 10;         
 
-long int temps=(1000);
+long int temps=(850);
 //********** Setup ****************************************************************
 void setup()
 {
