@@ -16,7 +16,7 @@ const byte segE = 9;
 const byte segF = 10;         
 const byte segG = 11; 
 const byte segdot = 12; 
-long int t = 900;
+long int t = 850;
 long int a = 1200;  // temps nomes per al punt del display.
 
 //********** Setup ****************************************************************
