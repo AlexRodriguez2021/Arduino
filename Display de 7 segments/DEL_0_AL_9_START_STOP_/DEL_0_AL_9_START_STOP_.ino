@@ -1,23 +1,26 @@
 /**********************************************************************************
 **                                                                               **
-**                             NOM AMB DISPLAY                                   **
-**                             ALEX RODRIGUEZ                                    **
+**                             Display de 7 segments                             **
+**                                                                               **
+**                                 ALEX RODRIGUEZ                                **
 **                                                                               **
 **********************************************************************************/
 
 //********** Includes *************************************************************
 
 //********** Variables ************************************************************
-const byte segA = 5;          // donar nom al pin 5 de l’Arduino
-const byte segB = 6;          
-const byte segC = 7;          
-const byte segD = 8;          
-const byte segE = 9;          
-const byte segF = 10;         
-const byte segG = 11; 
-const byte segdot = 12; 
-long int t = 450;
-long int a = 450;  // temps nomes per al punt del display.
+const int segA = 5;          // donar nom al pin 5 de l’Arduino
+const int segB = 6;          // donar nom al pin 6 de l’Arduino
+const int segC = 7;          // donar nom al pin 7 de l’Arduino
+const int segD = 8;          // donar nom al pin 8 de l’Arduino
+const int segE = 9;          // donar nom al pin 9 de l’Arduino
+const int segF = 10;         // donar nom al pin 10 de l’Arduino
+const int segG = 11;         // donar nom al pin 11 de l’Arduino
+const int buttonPin = 2;     // donar nom al pin 2 de l’Arduino
+boolean buttonEstat = HIGH;   // definir variable d'estat pel polsador
+boolean buttonEstatPrevi = HIGH;
+
+int num = 0;                 // definir variable del número a mostrar
 
 //********** Setup ****************************************************************
 void setup()
@@ -29,11 +32,34 @@ void setup()
   pinMode(segE, OUTPUT);     // definir el pin 9 com una sortida
   pinMode(segF, OUTPUT);     // definir el pin 10 com una sortida
   pinMode(segG, OUTPUT);     // definir el pin 11 com una sortida
+  pinMode(buttonPin, INPUT);      // definir el pin 2 com una entrada
+  
+  digitalWrite(segA, LOW);     // posar a 0V el pin 5
+  digitalWrite(segB, LOW);     // posar a 0V el pin 6
+  digitalWrite(segC, LOW);     // posar a 0V el pin 7
+  digitalWrite(segD, LOW);     // posar a 0V el pin 8
+  digitalWrite(segE, LOW);     // posar a 0V el pin 9
+  digitalWrite(segF, LOW);     // posar a 0V el pin 10
+  digitalWrite(segG, LOW);     // posar a 0V el pin 11  
 }
 
 //********** Loop *****************************************************************
 void loop()
-{
+{ 
+  delay(700);    // per evitar que en una pulsació curta salti més d'un número
+  buttonEstat = digitalRead(buttonPin);
+  if (buttonEstat != buttonEstatPrevi)
+  { 
+    buttonEstatPrevi = buttonEstat;
+  }
+  if (buttonEstatPrevi == HIGH)
+  {
+    num = num + 1;              // incrementar el número a mostrar
+    if (num == 10) num = 0;     // si s'ha superat 9 tornar a 0     
+  }
+  switch(num)
+  {
+    case 0:
       //ESTE ES PARA HACER EL 0
   
   digitalWrite(segA, LOW);     // MEDIO CENTRO
@@ -43,11 +69,10 @@ void loop()
   digitalWrite(segE, HIGH);    //  ABAJO IZQUIERDA
   digitalWrite(segF, HIGH);    // ABAJO DERECHA
   digitalWrite(segG, HIGH);    // MEDIO ABAJO
-    digitalWrite(segdot, HIGH);    // PUNTO
-  
-  delay(t);                  // es queden leds tms encesos
 
-    //ESTE ES PARA HACER EL 1
+      break;
+    case 1:   
+      //ESTE ES PARA HACER EL 1
   
   digitalWrite(segA, LOW);    // MEDIO CENTRO
   digitalWrite(segB, LOW);    // ARRIBA IZQUIERDA
@@ -56,11 +81,9 @@ void loop()
   digitalWrite(segE, LOW);    //  ABAJO IZQUIERDA
   digitalWrite(segF, HIGH);   // ABAJO DERECHA
   digitalWrite(segG, LOW);    // MEDIO ABAJO
-    digitalWrite(segdot, HIGH);    // PUNTO
-  
-  delay(t);                  // es queden leds tms encesos
-
-    //ESTE ES PARA HACER EL 2
+      break;
+    case 2:  
+     //ESTE ES PARA HACER EL 2
   
   digitalWrite(segA, HIGH);    // MEDIO CENTRO
   digitalWrite(segB, LOW);    // ARRIBA IZQUIERDA
@@ -69,11 +92,9 @@ void loop()
   digitalWrite(segE, HIGH);    //  ABAJO IZQUIERDA
   digitalWrite(segF, LOW);   // ABAJO DERECHA
   digitalWrite(segG, HIGH);    // MEDIO ABAJO
-    digitalWrite(segdot, HIGH);    // PUNTO
-  
-  delay(t);                  // es queden leds tms encesos
-
-    //ESTE ES PARA HACER EL 3
+      break;  
+    case 3:        
+     //ESTE ES PARA HACER EL 3
   
   digitalWrite(segA, HIGH);    // MEDIO CENTRO
   digitalWrite(segB, LOW);    // ARRIBA IZQUIERDA
@@ -82,11 +103,9 @@ void loop()
   digitalWrite(segE, LOW);    //  ABAJO IZQUIERDA
   digitalWrite(segF, HIGH);   // ABAJO DERECHA
   digitalWrite(segG, HIGH);    // MEDIO ABAJO
-    digitalWrite(segdot, HIGH);    // PUNTO
-  
-  delay(t);                  // es queden leds tms encesos
-  
-    //ESTE ES PARA HACER EL 4
+      break;  
+    case 4:   
+      //ESTE ES PARA HACER EL 4
   
   digitalWrite(segA, HIGH);    // MEDIO CENTRO
   digitalWrite(segB, HIGH);    // ARRIBA IZQUIERDA
@@ -95,11 +114,9 @@ void loop()
   digitalWrite(segE, LOW);    //  ABAJO IZQUIERDA
   digitalWrite(segF, HIGH);   // ABAJO DERECHA
   digitalWrite(segG, LOW);    // MEDIO ABAJO
-    digitalWrite(segdot, HIGH);    // PUNTO
-  
-  delay(t);                  // es queden leds tms encesos
-
-    //ESTE ES PARA HACER EL 5
+      break;  
+    case 5:        
+     //ESTE ES PARA HACER EL 5
   
   digitalWrite(segA, HIGH);    // MEDIO CENTRO
   digitalWrite(segB, HIGH);    // ARRIBA IZQUIERDA
@@ -108,12 +125,9 @@ void loop()
   digitalWrite(segE, LOW);    //  ABAJO IZQUIERDA
   digitalWrite(segF, HIGH);   // ABAJO DERECHA
   digitalWrite(segG, HIGH);    // MEDIO ABAJO
-    digitalWrite(segdot, HIGH);    // PUNTO
-  
-  delay(t);                  // es queden leds tms encesos
-
-  
-    //ESTE ES PARA HACER EL 6
+      break;  
+    case 6:            
+      //ESTE ES PARA HACER EL 6
   
   digitalWrite(segA, HIGH);    // MEDIO CENTRO
   digitalWrite(segB, HIGH);    // ARRIBA IZQUIERDA
@@ -122,11 +136,9 @@ void loop()
   digitalWrite(segE, HIGH);    //  ABAJO IZQUIERDA
   digitalWrite(segF, HIGH);   // ABAJO DERECHA
   digitalWrite(segG, HIGH);    // MEDIO ABAJO
-    digitalWrite(segdot, HIGH);    // PUNTO
-  
-  delay(t);                  // es queden leds tms encesos
-
-      //ESTE ES PARA HACER EL 7
+      break;  
+    case 7:             
+    //ESTE ES PARA HACER EL 7
   
   digitalWrite(segA, LOW);    // MEDIO CENTRO
   digitalWrite(segB, LOW);    // ARRIBA IZQUIERDA
@@ -135,11 +147,9 @@ void loop()
   digitalWrite(segE, LOW);    //  ABAJO IZQUIERDA
   digitalWrite(segF, HIGH);   // ABAJO DERECHA
   digitalWrite(segG, LOW);    // MEDIO ABAJO
-    digitalWrite(segdot, HIGH);    // PUNTO
-  
-  delay(t);                  // es queden leds tms encesos
-  
-      //ESTE ES PARA HACER EL 8
+      break;  
+    case 8:          
+        //ESTE ES PARA HACER EL 8
   
   digitalWrite(segA, HIGH);    // MEDIO CENTRO
   digitalWrite(segB, HIGH);    // ARRIBA IZQUIERDA
@@ -148,11 +158,9 @@ void loop()
   digitalWrite(segE, HIGH);    //  ABAJO IZQUIERDA
   digitalWrite(segF, HIGH);   // ABAJO DERECHA
   digitalWrite(segG, HIGH);    // MEDIO ABAJO
-    digitalWrite(segdot, HIGH);    // PUNTO
-  
-  delay(t);                  // es queden leds tms encesos
-
-     //ESTE ES PARA HACER EL 9
+      break;  
+    case 9:            
+    //ESTE ES PARA HACER EL 9
   
   digitalWrite(segA, HIGH);    // MEDIO CENTRO
   digitalWrite(segB, HIGH);    // ARRIBA IZQUIERDA
@@ -161,12 +169,8 @@ void loop()
   digitalWrite(segE, LOW);    //  ABAJO IZQUIERDA
   digitalWrite(segF, HIGH);   // ABAJO DERECHA
   digitalWrite(segG, LOW);    // MEDIO ABAJO
-    digitalWrite(segdot, HIGH);    // PUNTO
-  
-  delay(t);                  // es queden leds tms encesos
-
-
-
+      break;  
+  }    
 }
-  
+
 //********** Funcions *************************************************************
