@@ -43,7 +43,7 @@ void loop()
   digitalWrite(segE, HIGH);    //  ABAJO IZQUIERDA
   digitalWrite(segF, HIGH);    // ABAJO DERECHA
   digitalWrite(segG, HIGH);    // MEDIO ABAJO
-    digitalWrite(segdot, LOW);    // PUNTO
+    digitalWrite(segdot, HIGH);    // PUNTO
   
   delay(t);                  // es queden leds tms encesos
 
@@ -56,7 +56,7 @@ void loop()
   digitalWrite(segE, LOW);    //  ABAJO IZQUIERDA
   digitalWrite(segF, HIGH);   // ABAJO DERECHA
   digitalWrite(segG, LOW);    // MEDIO ABAJO
-    digitalWrite(segdot, LOW);    // PUNTO
+    digitalWrite(segdot, HIGH);    // PUNTO
   
   delay(t);                  // es queden leds tms encesos
 
@@ -69,7 +69,7 @@ void loop()
   digitalWrite(segE, HIGH);    //  ABAJO IZQUIERDA
   digitalWrite(segF, LOW);   // ABAJO DERECHA
   digitalWrite(segG, HIGH);    // MEDIO ABAJO
-    digitalWrite(segdot, LOW);    // PUNTO
+    digitalWrite(segdot, HIGH);    // PUNTO
   
   delay(t);                  // es queden leds tms encesos
 
@@ -82,7 +82,7 @@ void loop()
   digitalWrite(segE, LOW);    //  ABAJO IZQUIERDA
   digitalWrite(segF, HIGH);   // ABAJO DERECHA
   digitalWrite(segG, HIGH);    // MEDIO ABAJO
-    digitalWrite(segdot, LOW);    // PUNTO
+    digitalWrite(segdot, HIGH);    // PUNTO
   
   delay(t);                  // es queden leds tms encesos
   
@@ -95,7 +95,7 @@ void loop()
   digitalWrite(segE, LOW);    //  ABAJO IZQUIERDA
   digitalWrite(segF, HIGH);   // ABAJO DERECHA
   digitalWrite(segG, LOW);    // MEDIO ABAJO
-    digitalWrite(segdot, LOW);    // PUNTO
+    digitalWrite(segdot, HIGH);    // PUNTO
   
   delay(t);                  // es queden leds tms encesos
 
@@ -108,7 +108,7 @@ void loop()
   digitalWrite(segE, LOW);    //  ABAJO IZQUIERDA
   digitalWrite(segF, HIGH);   // ABAJO DERECHA
   digitalWrite(segG, HIGH);    // MEDIO ABAJO
-    digitalWrite(segdot, LOW);    // PUNTO
+    digitalWrite(segdot, HIGH);    // PUNTO
   
   delay(t);                  // es queden leds tms encesos
 
@@ -122,7 +122,7 @@ void loop()
   digitalWrite(segE, HIGH);    //  ABAJO IZQUIERDA
   digitalWrite(segF, HIGH);   // ABAJO DERECHA
   digitalWrite(segG, HIGH);    // MEDIO ABAJO
-    digitalWrite(segdot, LOW);    // PUNTO
+    digitalWrite(segdot, HIGH);    // PUNTO
   
   delay(t);                  // es queden leds tms encesos
 
@@ -135,7 +135,7 @@ void loop()
   digitalWrite(segE, LOW);    //  ABAJO IZQUIERDA
   digitalWrite(segF, HIGH);   // ABAJO DERECHA
   digitalWrite(segG, LOW);    // MEDIO ABAJO
-    digitalWrite(segdot, LOW);    // PUNTO
+    digitalWrite(segdot, HIGH);    // PUNTO
   
   delay(t);                  // es queden leds tms encesos
   
@@ -148,7 +148,7 @@ void loop()
   digitalWrite(segE, HIGH);    //  ABAJO IZQUIERDA
   digitalWrite(segF, HIGH);   // ABAJO DERECHA
   digitalWrite(segG, HIGH);    // MEDIO ABAJO
-    digitalWrite(segdot, LOW);    // PUNTO
+    digitalWrite(segdot, HIGH);    // PUNTO
   
   delay(t);                  // es queden leds tms encesos
 
@@ -161,7 +161,7 @@ void loop()
   digitalWrite(segE, LOW);    //  ABAJO IZQUIERDA
   digitalWrite(segF, HIGH);   // ABAJO DERECHA
   digitalWrite(segG, LOW);    // MEDIO ABAJO
-    digitalWrite(segdot, LOW);    // PUNTO
+    digitalWrite(segdot, HIGH);    // PUNTO
   
   delay(t);                  // es queden leds tms encesos
 
