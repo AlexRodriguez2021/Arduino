@@ -1,8 +1,4 @@
-/*
-    ledcube.pde - Example sketch for controlling an LED cube.
-    Created by Gamaiel Zavala (gzip), 2009-2014
-    MIT License. See accompanying LICENSE file for terms.
-*/
+
 
 #include <LedCube.h>
 
